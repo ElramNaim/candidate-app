@@ -9,8 +9,15 @@ import {
   IconButton,
 } from "@mui/material";
 import FilterListOffIcon from "@mui/icons-material/FilterListOff";
-import { FiltersBarProps, POSITIONS, STATUSES } from "../types/candidate";
 import { useFilterbar } from "../hooks/useFilterbar";
+import { POSITIONS, STATUSES } from "../constants/candidates";
+import { Filters } from "../types/candidate";
+
+export interface FiltersBarProps {
+  filters: Filters;
+  onChange: (filters: Filters) => void;
+  onReset: () => void;
+}
 
 export const FiltersBar = ({ filters, onChange, onReset }: FiltersBarProps) => {
   const isPositionDisabled = filters.name.trim() === "";

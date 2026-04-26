@@ -1,5 +1,6 @@
 import { SelectChangeEvent } from "@mui/material";
-import { Filters, FiltersBarProps } from "../types/candidate";
+import { FiltersBarProps } from "../components/Filters";
+import { Filters } from "../types/candidate";
 
 export const useFilterbar = ({
   filters,

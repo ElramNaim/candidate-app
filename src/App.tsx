@@ -5,15 +5,9 @@ import { FiltersBar } from "./components/Filters";
 import { CandidatesTable } from "./components/CandidatesTable";
 import { useCandidates } from "./hooks/useCandidates";
 import { Filters } from "./types/candidate";
+import { DEFAULT_FILTERS } from "./constants/candidates";
 
 const queryClient = new QueryClient();
-
-const DEFAULT_FILTERS: Filters = {
-  name: "",
-  position: "",
-  status: "",
-  yearsOfExperience: "",
-};
 
 const CandidatesPage = () => {
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);

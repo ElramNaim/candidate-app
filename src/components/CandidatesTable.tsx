@@ -13,12 +13,14 @@ import {
   Typography,
   Box,
 } from "@mui/material";
-import {
-  CandidateFields,
-  CandidatesTableProps,
-  STATUS_COLORS,
-} from "../types/candidate";
+import { CANDIDATE_FIELDS, STATUS_COLORS } from "../constants/candidates";
+import { Candidate } from "../types/candidate";
 
+interface CandidatesTableProps {
+  candidates: Candidate[];
+  isLoading: boolean;
+  isError: boolean;
+}
 export const CandidatesTable = ({
   candidates,
   isLoading,
@@ -46,7 +48,7 @@ export const CandidatesTable = ({
       <Table>
         <TableHead sx={{ backgroundColor: "black" }}>
           <TableRow>
-            {CandidateFields.map((h) => (
+            {CANDIDATE_FIELDS.map((h) => (
               <TableCell key={h} sx={{ color: "#fff", fontWeight: 700 }}>
                 {h}
               </TableCell>
