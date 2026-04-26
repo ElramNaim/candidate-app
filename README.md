@@ -9,7 +9,6 @@ A React application for browsing and filtering candidate profiles.
 - `src/hooks/` — hooks and filter logic
 - `src/services/` — data fetching services
 - `src/types/` — shared TypeScript types
-- `test/` — unit tests
 
 ## Requirements
 
