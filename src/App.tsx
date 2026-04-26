@@ -1,21 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Container, Typography, Box } from "@mui/material";
+import { FiltersBar } from "./components/Filters";
+import { CandidatesTable } from "./components/CandidatesTable";
+import { useCandidates } from "./hooks/useCandidates";
+import { Filters } from "./types/candidate";
 
-const App = () => {
+const queryClient = new QueryClient();
+
+const DEFAULT_FILTERS: Filters = {
+  name: "",
+  position: "",
+  status: "",
+  yearsOfExperience: "",
+};
+
+const CandidatesPage = () => {
+  const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
+  const { filteredCandidates, isLoading, isError } = useCandidates(filters);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="lg" sx={{ py: 4 }}>
+      <Box sx={{ mb: 3 }}>
+        <Typography sx={{ variant: "h4", fontWeight: 700 }}>
+          Candidates
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {filteredCandidates.length} result
+          {filteredCandidates.length !== 1 ? "s" : ""} found
+        </Typography>
+      </Box>
+
+      <FiltersBar
+        filters={filters}
+        onChange={setFilters}
+        onReset={() => setFilters(DEFAULT_FILTERS)}
+      />
+
+      <CandidatesTable
+        candidates={filteredCandidates}
+        isLoading={isLoading}
+        isError={isError}
+      />
+    </Container>
+  );
+};
+
+export const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <CandidatesPage />
+    </QueryClientProvider>
   );
 };
