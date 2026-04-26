@@ -1,0 +1,100 @@
+{
+  "candidates": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "position": "Frontend",
+      "status": "Interview",
+      "yearsOfExperience": 3
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "position": "Backend",
+      "status": "Hired",
+      "yearsOfExperience": 5
+    },
+    {
+      "id": 3,
+      "name": "Carol White",
+      "email": "carol@example.com",
+      "position": "Fullstack",
+      "status": "New",
+      "yearsOfExperience": 1
+    },
+    {
+      "id": 4,
+      "name": "David Brown",
+      "email": "david@example.com",
+      "position": "Frontend",
+      "status": "New",
+      "yearsOfExperience": 2
+    },
+    {
+      "id": 5,
+      "name": "Eva Green",
+      "email": "eva@example.com",
+      "position": "Backend",
+      "status": "Interview",
+      "yearsOfExperience": 7
+    },
+    {
+      "id": 6,
+      "name": "Frank Lee",
+      "email": "frank@example.com",
+      "position": "DevOps",
+      "status": "Hired",
+      "yearsOfExperience": 4
+    },
+    {
+      "id": 7,
+      "name": "Grace Kim",
+      "email": "grace@example.com",
+      "position": "Fullstack",
+      "status": "Interview",
+      "yearsOfExperience": 6
+    },
+    {
+      "id": 8,
+      "name": "Henry Davis",
+      "email": "henry@example.com",
+      "position": "Frontend",
+      "status": "New",
+      "yearsOfExperience": 0
+    },
+    {
+      "id": 9,
+      "name": "Isabella Moore",
+      "email": "isabella@example.com",
+      "position": "Backend",
+      "status": "Hired",
+      "yearsOfExperience": 9
+    },
+    {
+      "id": 10,
+      "name": "James Wilson",
+      "email": "james@example.com",
+      "position": "DevOps",
+      "status": "New",
+      "yearsOfExperience": 2
+    },
+    {
+      "id": 11,
+      "name": "Karen Taylor",
+      "email": "karen@example.com",
+      "position": "Frontend",
+      "status": "Interview",
+      "yearsOfExperience": 3
+    },
+    {
+      "id": 12,
+      "name": "Liam Anderson",
+      "email": "liam@example.com",
+      "position": "Fullstack",
+      "status": "Hired",
+      "yearsOfExperience": 5
+    }
+  ]
+}
