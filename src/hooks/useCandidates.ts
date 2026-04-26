@@ -3,7 +3,7 @@ import { Candidate, Filters } from "../types/candidate";
 import { fetchCandidates } from "../services/candidatesService";
 
 export const useCandidates = (filters: Filters) => {
-  const { data } = useQuery<Candidate[]>({
+  const { data, isLoading, isError } = useQuery<Candidate[]>({
     queryKey: ["candidates"],
     queryFn: fetchCandidates,
     staleTime: 1000 * 60 * 5,
@@ -18,10 +18,10 @@ export const useCandidates = (filters: Filters) => {
 
     const matchYears =
       filters.yearsOfExperience === "" ||
-      c.yearsOfExperience >= Number(filters.yearsOfExperience);
+      c.yearsOfExperience === Number(filters.yearsOfExperience);
 
     return matchName && matchPosition && matchStatus && matchYears;
   });
 
-  return { filteredCandidates };
+  return { filteredCandidates, isLoading, isError };
 };
